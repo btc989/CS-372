@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Login/Sign-In</title>
+  <title>Appointer</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     
@@ -31,6 +31,7 @@
 <script src='fullcalendar.min.js'></script>
    
 <script src="sweetalert.min.js"></script>
+<script src="validation.js"></script>
 <link rel="stylesheet" type="text/css" href="sweetalert.css">
     
 <script>
@@ -46,35 +47,47 @@ $(document).ready(function() {
 			navLinks: true, // can click day/week names to navigate views
 			selectable: true,
 			selectHelper: true,
+            hover: function(start,end)
+            {
+                alert("uo");
+        },
 			select: function(start, end) {
                 
                 swal({
-  title: "Add Appointment",
-  text: "Title:",
-  type: "input",
-  showCancelButton: true,
-  closeOnConfirm: false,
-  animation: "slide-from-top",
-  inputPlaceholder: "Title"
-},
-function(inputValue){
-  if (inputValue === false) return false;
-  
-  if (inputValue === "") {
-    swal.showInputError("You need to write something!");
-    return false
-  }
-  
-  swal("Appointment Added!",  inputValue, "success");
-       var eventData;
-				
-					eventData = {
-						title: inputValue,
-						start: start,
-						end: end
-					};
-					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-				$('#calendar').fullCalendar('unselect');             
+                  title: "Add Appointment",
+                  text: "Title:",
+                  type: "input",
+                  showCancelButton: true,
+                  closeOnConfirm: false,
+                  showCancelButton: true,
+                  confirmButtonColor: "#ffa500",
+                  confirmButtonText: "Add",
+                  closeOnConfirm: false,                
+                  animation: "slide-from-top",
+                  inputPlaceholder: "Title"
+                },
+                function(inputValue){
+                  if (inputValue === false) return false;
+
+                  if (inputValue === "") {
+                    swal.showInputError("You need to write something!");
+                    return false
+                  }
+
+                  swal("Appointment Added!",  inputValue, "success");
+                       var eventData;
+
+                                    eventData = {
+                                        title: inputValue,
+                                        start: start,
+                                        end: end
+                                    };
+                                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                                $('#calendar').fullCalendar('unselect');  
+
+                                 //RIGHT HERE SEND NEW APPOINTMENT TO PHP  
+
+                    
 });
 				
 			},
@@ -184,21 +197,7 @@ function(inputValue){
     <!-- START OF CALENDAR -->
       
       <div id='calendar'></div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    
       
       
       <!-- END OF CALENDAR -->
@@ -208,29 +207,29 @@ function(inputValue){
           <div class="sminputs">
               
               <div class="input full">
-                <label class="string optional" for="user-name" id="label-email">Appointment Name*</label>
-                <input class="string optional" maxlength="255" id="email" placeholder="Name" type="email" size="50" />
+                <label class="string optional" for="user-name" id="label-appointmentName">Appointment Name*</label>
+                <input class="string optional" maxlength="255" id="appointmentName" placeholder="Name" type="email" size="50" />
               </div>
             </div>
           <div class="sminputs">
               
               <div class="input full">
-                <label class="string optional" for="user-name" id="label-email">Appointment Details</label>
-                <input class="string optional" maxlength="255" id="email" placeholder="Details" type="email" size="50" />
+                <label class="string optional" for="user-name" id="label-appointmentDetails">Appointment Details</label>
+                <input class="string optional" maxlength="255" id="appointmentDetails" placeholder="Details" type="email" size="50" />
               </div>
             </div>
           <div class="sminputs">
               
               <div class="input full">
-                <label class="string optional" for="user-name" id="label-email"> Start Date*</label>
-                <input class="string optional" maxlength="255" id="startDate" type="datetime-local" size="50" />
+                <label class="string optional" for="user-name" id="label-start"> Start Date*</label>
+                <input class="string optional" maxlength="255" id="start" type="datetime-local" size="50" />
               </div>
             </div>
           <div class="sminputs">
               
               <div class="input full">
-                <label class="string optional" for="user-name" id="label-email"> End Date*</label>
-                <input class="string optional" maxlength="255" id="endDate" type="datetime-local" size="50" />
+                <label class="string optional" for="user-name" id="label-end"> End Date*</label>
+                <input class="string optional" maxlength="255" id="end" type="datetime-local" size="50" />
               </div>
             </div>
           <div class="simform__actions">
@@ -238,6 +237,8 @@ function(inputValue){
           </div>
       </div>
   <!-- END OF SIDE PANEL -->
-    </div>  
+    </div> 
+    
+    <script src="appointment_handler.js"></script>
     </body>
 </html>
