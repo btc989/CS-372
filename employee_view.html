@@ -30,7 +30,9 @@
 <script src='jquery.min.js'></script>
 <script src='fullcalendar.min.js'></script>
    
-
+<script src="sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="sweetalert.css">
+    
 <script>
 $(document).ready(function() {
 		
@@ -45,17 +47,36 @@ $(document).ready(function() {
 			selectable: true,
 			selectHelper: true,
 			select: function(start, end) {
-				var title = prompt('Event Title:');
-				var eventData;
-				if (title) {
+                
+                swal({
+  title: "Add Appointment",
+  text: "Title:",
+  type: "input",
+  showCancelButton: true,
+  closeOnConfirm: false,
+  animation: "slide-from-top",
+  inputPlaceholder: "Title"
+},
+function(inputValue){
+  if (inputValue === false) return false;
+  
+  if (inputValue === "") {
+    swal.showInputError("You need to write something!");
+    return false
+  }
+  
+  swal("Appointment Added!",  inputValue, "success");
+       var eventData;
+				
 					eventData = {
-						title: title,
+						title: inputValue,
 						start: start,
 						end: end
 					};
 					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-				}
-				$('#calendar').fullCalendar('unselect');
+				$('#calendar').fullCalendar('unselect');             
+});
+				
 			},
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
@@ -118,10 +139,8 @@ $(document).ready(function() {
 		});
 		
 	});
-
 </script>
 <style>
-
 	body 
     {
 		margin: 40px 10px;
@@ -138,12 +157,10 @@ $(document).ready(function() {
         cursor: pointer;
         line-height: 24px;
 	}
-
 	#calendar {
 		max-width: 700px;
 		margin: 0 auto;
 	}
-
 </style>
     
     
