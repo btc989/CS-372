@@ -591,3 +591,68 @@ function validatePassword(event)
         }
 }
 
+function addAppointment(event)
+{
+    var first = document.getElementById("appointmentName").value; //for appointment name
+     if (first === "" || first.length === 0) //checks if empty
+    {
+        document.getElementById("label-appointmentName").style.color = "red";
+        event.preventDefault();  
+    }
+    else if(first>60)
+    {
+        document.getElementById("label-appointmentName").style.color = "red";
+        document.getElementById("label-appointmentName").innerHTML = "Name less then 60 characters";
+        event.preventDefault();  
+    }
+    else
+    {
+       document.getElementById("label-appointmentName").innerHTML = "Appointment Title";
+        document.getElementById("label-appointmentName").style.color = "#000";
+    }
+    
+    //Appointment Description
+     var first = document.getElementById("appointmentDetails").value; //for appointment name
+    if(first>150)
+    {
+        document.getElementById("label-appointmentDetails").style.color = "red";
+        document.getElementById("label-appointmentDetails").innerHTML = "Name less then 60 characters";
+        event.preventDefault();  
+    }
+    else
+    {
+        document.getElementById("label-appointmentDetails").innerHTML = "Appointment Description";
+        document.getElementById("label-appointmentDetails").style.color = "#000";
+    }
+    
+    //Appointment start date
+    var start =document.getElementById("start").value; //for appointment start date/time
+    if(!start.match(/^(([0]?[1-9]|1[0-2])([0-2]?[0-9]|3[0-1])[1-2]d{3}) (20|21|22|23|[0-1]?d{1}):([0-5]?d{1})$/))
+    {
+        document.getElementById("label-start").style.color = "red";document.getElementById("label-start").innerHTML = "Enter valid date yyyy-mm-dd-hh-mm";
+        event.preventDefault(); 
+    }
+    else
+    {
+        document.getElementById("label-start").innerHTML = "Start Date";
+        document.getElementById("label-start").style.color = "#000";
+    }
+    
+    //Appointment end date
+    var end =document.getElementById("end").value; //for appointment end date/time
+    if(!end.match(/^(([0]?[1-9]|1[0-2])([0-2]?[0-9]|3[0-1])[1-2]d{3}) (20|21|22|23|[0-1]?d{1}):([0-5]?d{1})$/))
+    {
+        document.getElementById("label-end").style.color = "red";document.getElementById("label-end").innerHTML = "Enter valid date yyyy-mm-dd-hh-mm";
+        event.preventDefault(); 
+    }
+    else
+    {
+        document.getElementById("label-end").innerHTML = "End Date";
+        document.getElementById("label-end").style.color = "#000";
+    }
+    
+    /**********SEND DATE TO BACKEND********************************///
+    /*********************************************************************
+    ****************************************************************/
+}
+
