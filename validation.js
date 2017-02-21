@@ -590,7 +590,8 @@ function validatePassword(event)
             document.getElementById(label).innerHTML = "";    
         }
 }
-
+/**********************For Home Calendar Page**************/
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
 function addAppointment(event)
 {
     var first = document.getElementById("appointmentName").value; //for appointment name
@@ -655,4 +656,22 @@ function addAppointment(event)
     /*********************************************************************
     ****************************************************************/
 }
+
+/**********************For Stylist Profile Page**************/
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+function swapProfileInfo(event)
+{
+    var id = this.id;
+    alert(id);
+    document.getElementById("p-lgm-1").className = "hide";
+    document.getElementById("p-lgm-2").className =  "hide";
+    document.getElementById("p-lgm-3").className =  "hide";
+    document.getElementById("lgm-1").className = "unactive";
+    document.getElementById("lgm-2").className = "unactive";
+    document.getElementById("lgm-3").className = "unactive";
+    document.getElementById(id).className = "active";
+    document.getElementById("p-"+id).className = "stylemod_tab show";
+}
+
 
