@@ -663,7 +663,6 @@ function addAppointment(event)
 function swapProfileInfo(event)
 {
     var id = this.id;
-    alert(id);
     document.getElementById("p-lgm-1").className = "hide";
     document.getElementById("p-lgm-2").className =  "hide";
     document.getElementById("p-lgm-3").className =  "hide";
@@ -673,5 +672,253 @@ function swapProfileInfo(event)
     document.getElementById(id).className = "active";
     document.getElementById("p-"+id).className = "stylemod_tab show";
 }
+function hoverProfilePic(event)
+{
+    document.getElementById("editProfilePic").style.display = "block";
+    
+}
+function offhoverProfilePic(event)
+{
+    document.getElementById("editProfilePic").style.display = "none";
+    
+}
+function editOverview(event)
+{
+    var place = document.getElementById("p-lgm-1");
+    var text = place.textContent;
+    place.innerHTML="";
+    var r = document.createElement('span');
+     r.setAttribute("id", "overviewForm__wrapper");
+    var y = document.createElement("TEXTAREA");
+    
+      y.setAttribute("value", text);
+    y.setAttribute("cols", "160");
+    y.setAttribute("rows", "15");
+    y.setAttribute("Name", "textelement_overview");
+    y.setAttribute("id", "textelement_overview");
+    r.appendChild(y);
+  
 
+   
+    
+     var z = document.createElement("BUTTON");
+    z.setAttribute("type", "button");
+    z.setAttribute("id", "overviewCancel");
+    z.setAttribute("class", "sumbit");
+    z.className="sumbit";
+    var t = document.createTextNode("Cancel");       
+    z.appendChild(t)
+    r.appendChild(z);
+    
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "submit");
+    //x.setAttribute("", "submit");
+    x.setAttribute("class", "sumbit");
+    x.setAttribute("id", "overviewSubmit");
+    x.className="sumbit";
+    r.appendChild(x);
+    place.appendChild(r);
+    document.getElementById("textelement_overview").value= text;
+    document.getElementById("overviewCancel").className= "cancel";
+      document.getElementById("overviewSubmit").className= "save";
+    document.getElementById("overviewCancel").addEventListener("click",closeEditOverview);
+}
 
+function closeEditOverview()
+{
+    document.getElementById("overviewForm__wrapper").style.display="none";
+    
+    //NEED TO MAKE AJAX CALL TO GET INFO PREVIOUSLY WRITTEN 
+    
+    
+    
+    
+    
+    
+}
+
+function editEducation(event)
+{
+    var place = document.getElementById("p-lgm-2");
+    var text = place.textContent;
+    place.innerHTML="";
+    var r = document.createElement('span');
+    r.setAttribute("Name", "educationForm__wrapper");
+    r.setAttribute("id", "educationForm__wrapper");
+    var y = document.createElement("TEXTAREA");
+    
+      y.setAttribute("value", text);
+    y.setAttribute("cols", "160");
+    y.setAttribute("rows", "15");
+    y.setAttribute("Name", "textelement_education");
+    y.setAttribute("id", "textelement_education");
+    r.appendChild(y);
+  
+    
+     var z = document.createElement("BUTTON");
+    z.setAttribute("type", "button");
+    z.setAttribute("id", "cancelEducation");
+    //x.setAttribute("", "submit");
+    z.setAttribute("class", "sumbit");
+    z.className="sumbit";
+    var t = document.createTextNode("Cancel");       
+    z.appendChild(t)
+    r.appendChild(z);
+    
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "submit");
+    //x.setAttribute("", "submit");
+    x.setAttribute("class", "sumbit");
+    x.setAttribute("id", "saveEducation");
+    x.className="sumbit";
+    r.appendChild(x);
+    place.appendChild(r);
+    document.getElementById("textelement_education").value= text;
+     document.getElementById("cancelEducation").className= "cancel";
+      document.getElementById("saveEducation").className= "save";
+    document.getElementById("cancelEducation").addEventListener("click",closeEditEducation);
+    
+}
+
+function closeEditEducation()
+{
+    document.getElementById("educationForm__wrapper").style.display="none";
+    
+    //NEED TO MAKE AJAX CALL TO GET INFO PREVIOUSLY WRITTEN 
+    
+    
+    
+    
+    
+    
+}
+function editGallery(event)
+{
+    var place = document.getElementById("addPhoto");
+    var r = document.createElement('span');
+     r.setAttribute("id", "galleryForm__wrapper");
+    r.setAttribute("name", "gallleryForm__wrapper");
+    var y = document.createElement("INPUT");
+    
+      y.setAttribute("type", "file");
+
+    y.setAttribute("Name", "file_gallery");
+    y.setAttribute("id", "file_gallery");
+    r.appendChild(y);
+  
+
+   
+     var z = document.createElement("BUTTON");
+    z.setAttribute("type", "button");
+    z.setAttribute("id", "cancelGallery");
+    //x.setAttribute("", "submit");
+    z.setAttribute("class", "sumbit");
+    z.className="sumbit";
+    var t = document.createTextNode("Cancel");       
+    z.appendChild(t)
+    r.appendChild(z);
+    
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "submit");
+    x.setAttribute("id", "saveGallery");
+    //x.setAttribute("", "submit");
+    x.setAttribute("class", "sumbit");
+    x.className="sumbit";
+    r.appendChild(x);
+    place.appendChild(r);
+    
+    document.getElementById("cancelGallery").className= "cancel";
+      document.getElementById("saveGallery").className= "save";
+    
+    document.getElementById("cancelGallery").addEventListener("click",closeEditGallery);
+    
+    var container;
+    var items;
+    var pics;
+    container = document.getElementById("og-grid");
+    items = container.getElementsByClassName("deletePhoto");
+    pics = container.getElementsByTagName("li");
+   alert(items.length);
+    for (var j = 0; j < items.length; j++) 
+    {
+     items[j].style.display = "block";
+     items[j].addEventListener("click", photoDelete);
+    }
+}
+function closeEditGallery(event)
+{
+    document.getElementById("galleryForm__wrapper").style.display="none";
+    var container;
+    var items;
+    var pics;
+    container = document.getElementById("og-grid");
+    items = container.getElementsByClassName("deletePhoto");
+    pics = container.getElementsByTagName("li");
+    alert(items.length);
+    for (var j = 0; j < items.length; j++) 
+    {
+     items[j].style.display = "none";
+     items[j].removeEventListener("click", photoDelete);
+    }
+}
+function editProfilePic(event)
+{
+    var modal = document.getElementById("popup");
+    modal.style.display = "block";
+    var inner = document.getElementById("popup__content");
+     var r = document.createElement('span');
+    var y = document.createElement("INPUT");
+    
+      y.setAttribute("type", "file");
+
+    y.setAttribute("Name", "file_profile");
+    y.setAttribute("id", "file_profile");
+    r.appendChild(y);
+  
+
+    r.setAttribute("id", "picForm__wrapper");
+    r.setAttribute("id", "picForm__wrapper");
+     var z = document.createElement("BUTTON");
+    z.setAttribute("type", "button");
+    z.setAttribute("id", "cancelProfilePic");
+    //x.setAttribute("", "submit");
+    z.setAttribute("class", "sumbit");
+    z.className="sumbit";
+    var t = document.createTextNode("Cancel");       
+    z.appendChild(t)
+    r.appendChild(z);
+    
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "submit");
+    x.setAttribute("id", "saveProfilePic");
+    //x.setAttribute("", "submit");
+    x.setAttribute("class", "sumbit");
+    x.className="sumbit";
+    r.appendChild(x);
+    inner.appendChild(r);
+    
+    document.getElementById("cancelProfilePic").className= "cancel";
+      document.getElementById("saveProfilePic").className= "save";
+    
+    document.getElementById("cancelProfilePic").addEventListener("click",closeEditProfilePic);  
+    
+}
+function closeEditProfilePic(event)
+{
+     var modal = document.getElementById("popup");
+     modal.style.display = "none";
+}
+function photoDelete(event)
+{
+    alert("helllo");
+    parentDiv = event.currentTarget.parentNode;
+    parentDiv.style.display="none";
+    var arr = parentDiv.getElementsByTagName("a");
+    alert(arr.length)
+    arr.style.display="none";
+    arr.src = "#";
+    arr.href="#";
+    
+    //ADD JAVASCRIPT TO SEND SERVER WHICH PICTURE TO REMOVE FROM ACCOUNT
+    
+}
