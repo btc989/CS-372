@@ -213,6 +213,149 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 /*****Stylist Profile Page ********
 ********************************
 ********************************/
+.addPhoto
+{
+    padding: 2% 2% 2% 2%;
+    border: 1px solid #e5e5e5;
+    
+}
+.edit__wrapper
+{
+    position: relative;
+    float: right;
+    
+}
+.edit__wrapper:hover
+{
+    background-color: #ffc966;
+}
+.editPic__wrapper
+{
+    position: relative;
+    top:-20%;
+    float: right;
+    display:none;
+    background-color: #ffc966;
+}
+
+.edit
+{
+    width: 50%;
+    height: 50%;
+}
+.edit:hover
+{
+    cursor: pointer;
+}
+.deletePhoto
+{
+    position: absolute;
+    top:0%;
+    left:25%;
+    float: right;
+    display:none;
+    cursor: pointer;
+    background-color: #ffc966;
+}
+.delete
+{
+    width: 60%;
+    height: 60%;
+}
+
+.save
+{
+  height: 30px;
+  float: right;
+  color: #FFF;
+  width: 8%;
+  font-weight: 700;
+  font-size: 16px;
+  background: #ffa500;
+  margin-top: 7px;
+  margin-right: 3%;
+  border: none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+}
+.cancel
+{
+  height: 30px;
+  float: right;
+  color: #FFF;
+  width: 8%;
+  font-weight: 700;
+  font-size: 16px;
+  background: #809191;;
+  margin-top: 7px;
+  border:none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+}
+/* The Modal (background) */
+.popup__wrapper {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 300px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ 
+}
+
+/* Modal Content */
+.popup__content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+      text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+     border: 3px solid #e5e5e5;
+    border-radius: 4px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 .stylemod__title
 {
     position: fixed;
