@@ -338,6 +338,81 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     margin-top:10%;
 }
 
+/***********Add Stylist Page ********
+*************************************
+*************************************/
+
+.addStylist
+{
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+  background-size: 100% 100%;
+  
+  z-index: 1;
+}
+.addStylist::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.addStylist__wrapper {
+  display: block;
+  background: #FFF;
+  position: relative;
+  float:left;
+  top: -20%;
+  left:10%;
+  max-width: 80%;
+  width: 80%;
+  border-radius: 4px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  margin: 10% auto;
+  padding: 0% 1% 1% 1%;
+}
+
+.addStylist__container {
+  overflow: hidden;
+  width: 100%;
+}
+.addStylist__container::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.addStylist__heading {
+  text-align: center;
+  padding: 12px 0 12px 0;
+}
+.addStylist__heading-subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  color: #888;
+  line-height: 48px;
+}
+
+.addStylist__title
+{
+     display: block;
+  font-weight: 400;
+ font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #ffa500;
+  line-height: 48px;
+    
+}
+.addStylist__form {
+  border-top: 1px solid #e5e5e5;
+}
+
+
 /*****Stylist Profile Page ********
 ********************************
 ********************************/
