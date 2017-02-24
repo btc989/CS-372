@@ -309,6 +309,214 @@ function createAccount(event)
             }  
        }
 }
+function createStylistAccount(event)
+{
+    var test=true;
+    //*****First Name **************//
+    
+    var first = document.getElementById("firstName").value;
+    
+     if (first === "" || first.length === 0) //checks if empty
+    {
+        document.getElementById("firstName").className="errorBorder";  //add red borders-and text
+        document.getElementById("label-firstName").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+    else if(first.length <2)
+    {                       
+        document.getElementById("firstName").className="errorBorder";  //add red borders-and text
+        document.getElementById("label-firstName").style.color = "red";
+        document.getElementById("label-firstName").innerHTML = "First Name* At Least 2 characters";
+        document.getElementById("label-firstName").style.fontSize = "8px";
+        event.preventDefault(); 
+        test=false;
+    }
+    else if(first.length >50)
+    {
+        document.getElementById("firstName").className="errorBorder";  //add red borders-and text
+        document.getElementById("label-firstName").style.color = "red";
+        document.getElementById("label-firstName").innerHTML = "Can not be greater then 50 characters";
+        document.getElementById("label-firstName").style.fontSize = "8px";        
+        
+        event.preventDefault();
+        test=false;
+    }
+    else
+    {
+        document.getElementById("firstName").className =("sminput");  //if fixed applies old style
+        document.getElementById("label-firstName").innerHTML = "First Name*";   
+        document.getElementById("label-firstName").style.color = "#000";
+        document.getElementById("label-firstName").style.fontSize = "12px"; 
+    }
+    
+    //*****Last Name **************//
+     var last = document.getElementById("lastName").value;
+
+     if (last === "" || last.length === 0) //checks if empty
+    {
+        document.getElementById("lastName").className="errorBorder";  //add red borders-and text
+         document.getElementById("label-lastName").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+    else if(last.length <2)
+    {
+       document.getElementById("lastName").className="errorBorder";  //add red borders-and text
+        document.getElementById("label-lastName").style.color = "red";
+        document.getElementById("label-lastName").innerHTML = "Last Name* At least 2 characters";
+        document.getElementById("label-lastName").style.fontSize = "8px";   
+    }
+    else if(last.length >50)
+    {
+        document.getElementById("lastName").className="errorBorder";  //add red borders-and text
+        document.getElementById("label-lastName").style.color = "red";
+        document.getElementById("label-lastName").innerHTML = "Can not be greater then 50 characters";
+        document.getElementById("label-lastName").style.fontSize = "8px";   
+    }
+    else
+    {
+        document.getElementById("lastName").className =("sminputs");  //if fixed applies old style
+        document.getElementById("label-lastName").innerHTML = "Last Name*";    
+        document.getElementById("label-lastName").style.color = "#000";
+    }
+    //*****Birthdate **************//
+    var month = document.getElementById("months").value;
+    var day = document.getElementById("days").value;
+    var year = document.getElementById("years").value;
+    
+    var daypat =/([1-9]|[12]\d|3[01])/;
+    var monthpat =/^(0?[1-9]|1[012])$/;
+    var yearpat =/^\d{4}$/;
+    var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31]; 
+    if (month === "0" || day==="0" || year==="0") //checks if empty
+    {
+        document.getElementById("label-birthdate").style.color="red";
+        event.preventDefault();  
+        test=false;
+    }
+    else
+    {
+        if(month.match(monthpat) && day.match(daypat) && year.match(yearpat))
+        {
+                if (month===01 || month>02)  
+                {  
+                    if (day>ListofDays[month-1])  
+                    {  
+                        document.getElementById("label-birthdate").style.color="red";
+                        document.getElementById("label-birthdate").innerHTML = "Invalid Date";  
+                        test= false;  
+                    }  
+                }  
+                if (month==="02")  
+                {  
+                    var lyear = false;  
+                    if ( (!(year % 4) && year % 100) || !(year % 400))   
+                    {  
+                        lyear = true;  
+                    }  
+                    if ((lyear===false) && (day>=29))  
+                    {  
+                        document.getElementById("label-birthdate").style.color="red";
+                        document.getElementById("label-birthdate").innerHTML = "Invalid Date";  
+                        test= false;   
+                    }  
+                    if ((lyear===true) && (day>29))  
+                    {  
+                        document.getElementById("label-birthdate").style.color="red";
+                        document.getElementById("label-birthdate").innerHTML = "Invalid Date";  
+                        test= false;  
+                    }  
+                }  
+            }  
+            else  
+            {  
+                document.getElementById("label-birthdate").style.color="red";
+                document.getElementById("label-birthdate").innerHTML = "Enter Date in proper dd/mm/yyyy";  
+                test= false;  
+            }   
+        }
+    //*****Email **************//
+    
+      var email = document.getElementById("email").value;
+      var emailpat = /^(([a-zA-Z]|[0-9])|([-]|[_]|[.]))+[@](([a-zA-Z0-9])|([-])){2,63}[.](([a-zA-Z0-9]){2,63})+$/;
+     if (email === "" || email.length === 0) //checks if empty
+    {
+        document.getElementById("email").className="errorBorderLong";  //add red borders-and text
+        document.getElementById("label-email").style.color = "red";
+        event.preventDefault();  
+        test= false;
+    }
+   
+    else if(email.length>256)
+    {
+        document.getElementById("email").className="errorBorderLong";  //add red borders-and text
+        document.getElementById("label-email").style.color = "red";
+        document.getElementById("label-email").innerHTML = "Email address is too long)";
+        event.preventDefault();  
+        test= false;
+    }
+    
+     else
+    {
+        document.getElementById("email").className =("sminputs");  //if fixed applies old style
+        document.getElementById("label-email").innerHTML = "Email*";
+        document.getElementById("label-email").style.color = "#000";
+    }
+    
+      
+   if(!email.match(emailpat))
+    {
+        document.getElementById("email").className="errorBorderLong";  //add red borders-and text
+        document.getElementById("label-email").style.color = "red";
+        document.getElementById("label-email").innerHTML = "Please enter valid email (example@example.com/ca)";
+        event.preventDefault();  
+        test= false;
+    }
+     else
+    {
+        document.getElementById("email").className =("sminputs");  //if fixed applies old style
+        document.getElementById("label-email").innerHTML = "Email*";
+        document.getElementById("label-email").style.color = "#000";
+    }
+    
+    //*****Country **************//
+    var country = document.getElementById("country").value;
+     if (country === "00" || country==="") //checks if empty
+    {
+        document.getElementById("label-location").innerHTML = "Please enter your country";
+        document.getElementById("label-location").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+    //*****Reigon **************//
+     var reigon = document.getElementById("province").value;
+     if (reigon === "00"||reigon==="") //checks if empty
+    {
+        document.getElementById("label-location").innerHTML = "Please enter your province";
+        document.getElementById("label-location").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+    //*****City **************//
+    var city = document.getElementById("city").value;
+     if (city === "00"||city===""||city.length===0) //checks if empty
+    {
+        document.getElementById("label-location").innerHTML = "Please enter your city";
+        document.getElementById("label-location").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+     //*****Salon **************//
+    var salon = document.getElementById("salon").value;
+     if (salon === "00"||salon===""||salon.length===0) //checks if empty
+    {
+        document.getElementById("label-location").innerHTML = "Please enter your city";
+        document.getElementById("label-location").style.color = "red";
+        event.preventDefault();  
+        test=false;
+    }
+}
 
 function validateFirstName(event)
 {
@@ -487,6 +695,22 @@ function validateCity(event) //Level One
 {
     var city = event.currentTarget.value;
      if (city === "" || city.length === 0) //checks if empty
+    {
+        event.currentTarget.className="errorBorderLong";  //add red borders-and text
+        document.getElementById("invalid-locaton").style.color = "red";
+        event.preventDefault();  
+    }
+    else
+    {
+        event.currentTarget.className =("sminputs");  //if fixed applies old style
+        document.getElementById("invalid-location").innerHTML = "";    
+    }
+}
+
+function validateSalon(event) //Level One
+{
+    var salon = event.currentTarget.value;
+     if (salon === "" || salon.length === 0) //checks if empty
     {
         event.currentTarget.className="errorBorderLong";  //add red borders-and text
         document.getElementById("invalid-locaton").style.color = "red";
@@ -910,7 +1134,6 @@ function closeEditProfilePic(event)
 }
 function photoDelete(event)
 {
-    alert("helllo");
     parentDiv = event.currentTarget.parentNode;
     parentDiv.style.display="none";
     var arr = parentDiv.getElementsByTagName("a");
