@@ -14,7 +14,24 @@ city_states["Quebec"] = "|Gatineua|Laval|Longueuil|Quebec|Montreal";
 city_states["Saskatchewan"] = "|Moose Jaw|Regina|Saskatoon";
 city_states["Yukon"] = "|Whitehorse";
 
-
+/*
+function init() //for calendar hover events
+{
+    var container;
+    var items;
+    var pics;
+    //container = document.getElementById("og-grid");
+    items = document.getElementsByClassName("fc-event");
+   alert(items.length);
+    for (var j = 0; j < items.length; j++) 
+    {
+        items[j].addEventListener("hover", getEventInfo);
+    }
+}
+function getEventInfo(event)
+{
+    
+}*/
 function logIn(event)
 {
     var test=true;
@@ -1143,5 +1160,16 @@ function photoDelete(event)
     arr.href="#";
     
     //ADD JAVASCRIPT TO SEND SERVER WHICH PICTURE TO REMOVE FROM ACCOUNT
+    
+}
+
+function closeEventPopup(event)
+{
+     var modal = document.getElementById("popup");
+     modal.style.display = "none";
+    var modal = document.getElementById("eventGalleryBar");
+    modal.style.display = "none";
+    var modal = document.getElementById("eventGallery");
+    modal.style.display = "none";
     
 }
