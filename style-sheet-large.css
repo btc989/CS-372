@@ -430,6 +430,12 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     height:200px;
 }
 
+.customerDelete
+{
+    float: right;
+    color: red;
+}
+
 .customerLocation
 {
     position: fixed;
