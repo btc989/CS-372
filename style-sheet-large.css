@@ -432,8 +432,25 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 
 .customerDelete
 {
-    float: right;
-    color: red;
+    float: right;  
+  height: 30px;
+  color: #FFF;
+    margin-right: 3%;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #809191;;
+  margin-top: 7px;
+  border:none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+  margin-left:4%;
 }
 
 .customerLocation
@@ -453,6 +470,51 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
   cursor: pointer;
   line-height: 24px;
     color: #D2D8D8;
+}
+
+.scheduleButton
+{
+      height: 30px;
+  float: left;
+  color: #FFF;
+  width: 32%;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #ffa500;
+  margin-top: 7px;
+  
+  border: none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+    margin-left: 10%;
+}
+
+.customerGalleryUpload
+{
+  color: #FFF;
+  width: 32%;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #ffa500;
+  
+  border: none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+
 }
 
 /*****Stylist Profile Page ********
