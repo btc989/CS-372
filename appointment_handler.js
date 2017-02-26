@@ -1,5 +1,4 @@
-/*window.onload= function() {
-  init();
-};*/
+
 document.getElementById("newAppointment").addEventListener("click", addAppointment);
-document.getElementsByClassName("close")[0].addEventListener("click",closeEventPopup);
+document.getElementById("selectedHairstyle").addEventListener("click", selectHairstyle);
+document.getElementById("selectedHairstylist").addEventListener("click", selectHairstylist);
