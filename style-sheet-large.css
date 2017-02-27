@@ -430,29 +430,6 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     height:200px;
 }
 
-.customerDelete
-{
-    float: right;  
-  height: 30px;
-  color: #FFF;
-    margin-right: 3%;
-  font-weight: 700;
-  font-size: 16px;
-  background-color: #809191;;
-  margin-top: 7px;
-  border:none;
-   text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-  line-height: 24px;
-  margin-left:4%;
-}
-
 .customerLocation
 {
     position: fixed;
@@ -946,6 +923,74 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
   line-height: 24px;
     color: #D2D8D8;
 }
+
+/*****Manager Settings Page ********
+********************************
+********************************/
+
+.settings__wrapper
+{
+    margin-left: 5px;
+}
+
+.settings__wrapper button:hover
+{
+    background-color: #D2D8D8;
+}
+
+.settings__title
+{
+  display: block;
+  font-weight: 400;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #ffa500;
+  line-height: 48px;
+  margin-bottom:3%;
+  margin-left: 5%;
+  top:30%;
+  left:20%
+}
+
+.settings_label
+{
+    font-weight: bold;
+}
+
+.settings_input
+{
+    border: 2px solid #D2D8D8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 5px;
+    padding: 10px 15px;
+    width: 80%;
+}
+
+.deleteButton
+{
+    float: right;  
+  height: 30px;
+  color: #FFF;
+    margin-right: 3%;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #809191;;
+  margin-top: 7px;
+  border:none;
+   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+  margin-left:4%;
+  width:300px;
+}
+
 /*****Login SignUp Page ********
 ********************************
 ********************************/
