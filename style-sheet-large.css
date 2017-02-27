@@ -897,6 +897,55 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 }
 */
 
+/*****Manager Profile Page ********
+********************************
+********************************/
+
+
+.managerImage
+{
+    position: relative;
+    margin-left: 2%;
+    width:200px;
+    height:200px;
+}
+
+.managerSpecialties
+{
+    position: fixed;
+    top:37%;
+    left:25%;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.managerLocation
+{
+    position: fixed;
+    top:44%;
+    left:25%;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+  line-height: 24px;
+    color: #D2D8D8;
+}
 /*****Login SignUp Page ********
 ********************************
 ********************************/
