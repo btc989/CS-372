@@ -56,6 +56,36 @@
   background-repeat: no-repeat;
 }
 
+.styled-select2 select
+{
+     background: transparent;
+    float:left;
+   width: 275px;
+   padding: 3px;
+    margin-left: 1.5%;
+   font-size: 14px;
+   color: #8C979E;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+    display: inline;
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
 select.minimal:focus {
   background-image:
     linear-gradient(45deg, green 50%, transparent 50%),
@@ -157,7 +187,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     text-align: center;
     padding: 18px 16px;
     text-decoration: none;
-    background: #D2D8D8;
+    background: #f0f0f0;
     overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -222,7 +252,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 {
   display: block;
   background: #FFF;
-  position: absolute;
+  position: relative;
   left:7.5%;
   max-width: 80%;
     width:80%;
@@ -610,6 +640,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
+    top: -30%;
     border: 1px solid #888;
     width: 80%;
       text-overflow: ellipsis;
@@ -624,6 +655,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
      border: 3px solid #e5e5e5;
     border-radius: 4px;
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 /* The Close Button */
