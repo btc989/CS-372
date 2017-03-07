@@ -1,6 +1,9 @@
 /*****General Things Needed on each page ********
 ********************************
 ********************************/
+a {
+    text-decoration: none;
+}
 #calendar {
         float:right;
 		max-width: 700px;
