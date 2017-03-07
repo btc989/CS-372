@@ -33,9 +33,12 @@
 <script src="sweetalert.min.js"></script>
 <script src="validation.js"></script>
 <link rel="stylesheet" type="text/css" href="sweetalert.css">
+  
     
+<link rel="shortcut icon" href="favicon.ico"> 
 <link rel="stylesheet" type="text/css" href="default.css" />
 <link rel="stylesheet" type="text/css" href="component.css" />
+<script src="modernizr.custom.js"></script>
     
 <script>
 $(document).ready(function() {
@@ -94,6 +97,39 @@ $(document).ready(function() {
 });
 				
 			},
+             eventClick: function( event, jsEvent, view ) 
+            { 
+                //use event to access server to get gallery pictures
+                
+                //if stylist field is set then it is a hair appointment so set the gallery field and add stylist info/profile page link. Otherwise dont not call those tabs and just provide date and title 
+                //on customer view they need the option to add photos to the appointment, stylist can only see the photos
+                
+               var modal = document.getElementById("eventPopup");
+               modal.style.display = "block";
+              var eventTitle = document.getElementById("eventTitle");
+                eventTitle.innerHTML=event.title;
+                
+                var eventStart = document.getElementById("eventStart");
+                eventStart.innerHTML="Start Time: "+event.start;
+                
+            var eventEnd = document.getElementById("eventEnd");
+                eventEnd.innerHTML="End Time: "+event.end;
+              
+            //Add section for stylist if hair appointment
+            var eventEnd = document.getElementById("eventStylist");
+                eventEnd.innerHTML="Stylist: ";
+                
+            var eventEnd = document.getElementById("eventLocation");
+                eventEnd.innerHTML="Salon Location: ";
+                
+                 
+            //Add Gallery for stylist picture  
+            var galleryBar = document.getElementById("galleryBar");
+            galleryBar.style.display="block";
+                var gallery = document.getElementById("gallery");
+            gallery.style.display="block";
+           gallery.innerHTML="<div class='main'><ul id='og-grid' class='og-grid scrollable'><li><img src=\'images/thumbs/3.jpg\' alt='img03'/></li><li> <img src=\'images/thumbs/1.jpg\' alt='img01'/></li></ul></div>";
+            },
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
@@ -207,7 +243,7 @@ $(document).ready(function() {
                   <label class="string optional" for="user-name" id="label-bookAppointment">Select a hairstyle</label>
                   
                   <!-- The popup box for selecting a hairstyle-->
-                  <div id="popup" class="popup__wrapper">
+                  <div id="hairPopup" class="popup__wrapper">
 
                     <!-- Modal content -->
                     <div id="popup__content" class="popup__content">
@@ -358,11 +394,35 @@ $(document).ready(function() {
       </div>
   <!-- END OF SIDE PANEL -->
     </div> 
+    <!-- The popup box for event information-->
+    <div id="eventPopup" class="popup__wrapper">
+        
+      <!-- Modal content -->
+      <div id="eventPopup__content" class="popup__content">
+          <span class="close">&times;</span>
+          <div id="eventInfo" class="eventInfo">
+           <div id="eventTitle" class="eventTitle"></div>
+           <div id="eventStart" class="eventEtc"></div>
+           <div id="eventEnd" class="eventEtc"></div> 
+           <div id="eventStylist" class="eventEtc"></div>
+           <div id="eventLocation" class="eventEtc"></div>
+          </div>
+          <div id="galleryBar" class="galleryBar">
+          Gallery
+          </div>
+          <div id="gallery" class="gallery">
+          
+          </div>
+        
+      </div>
+    </div>
     
     </body>
     
     <script src="appointment_handler.js"></script>
-    <script src="grid.js"></script>
+    
+     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> This makes the photo grid run but crashes calendar -->
+  <script src="grid.js"></script>
 		<script>
 			$(function() {
 				Grid.init();
