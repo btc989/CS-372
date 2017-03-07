@@ -886,7 +886,7 @@ function addAppointment(event)
 
 function selectHairstyle(event)
 {    
-    var modal = document.getElementById("popup");
+    var modal = document.getElementById("hairPopup");
     modal.style.display = "block";
     //var inner = document.getElementById("popup__content");
     
@@ -895,7 +895,7 @@ function selectHairstyle(event)
 
 function closeSelectHairstyle(event)
 {
-     var modal = document.getElementById("popup");
+     var modal = document.getElementById("hairPopup");
      modal.style.display = "none";
 }
 
@@ -911,6 +911,12 @@ function selectHairstylist(event)
 function closeSelectHairstylist(event)
 {
      var modal = document.getElementById("popupStylist");
+     modal.style.display = "none";
+}
+
+function closeEvent(event)
+{
+     var modal = document.getElementById("eventPopup");
      modal.style.display = "none";
 }
 
@@ -1176,5 +1182,16 @@ function photoDelete(event)
     arr.href="#";
     
     //ADD JAVASCRIPT TO SEND SERVER WHICH PICTURE TO REMOVE FROM ACCOUNT
+    
+}
+
+function closeEventPopup(event)
+{
+     var modal = document.getElementById("popup");
+     modal.style.display = "none";
+    var modal = document.getElementById("eventGalleryBar");
+    modal.style.display = "none";
+    var modal = document.getElementById("eventGallery");
+    modal.style.display = "none";
     
 }
