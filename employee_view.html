@@ -127,9 +127,9 @@ $(document).ready(function() {
             //Add Gallery for stylist picture  
             var galleryBar = document.getElementById("galleryBar");
             galleryBar.style.display="block";
-                var gallery = document.getElementById("gallery");
-            gallery.style.display="block";
-           gallery.innerHTML="<div class='main'><ul id='og-grid' class='og-grid scrollable'><li><img src=\'images/thumbs/3.jpg\' alt='img03'/></li><li> <img src=\'images/thumbs/1.jpg\' alt='img01'/></li></ul></div>";
+                var gallery = document.getElementById("og-grid");
+            gallery.style.position="relative";
+           gallery.innerHTML="<li><img src=\'images/thumbs/3.jpg\' alt='img03'/></li><li> <img src=\'images/thumbs/1.jpg\' alt='img01'/></li>";
             },
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
@@ -296,11 +296,16 @@ $(document).ready(function() {
           <div id="galleryBar" class="galleryBar">
           Gallery
           </div>
-          <div id="gallery" class="gallery">
           
+          <div id="gallery" class="gallery">
+           <div class="main">
+               <ul id="og-grid" class="og-grid scrollable">
+                   
+               </ul>
+           </div>
           </div>
-        
       </div>
+        
     </div>
     
     
