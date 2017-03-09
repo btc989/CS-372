@@ -982,7 +982,7 @@ function editOverview(event)
     r.appendChild(x);
     place.appendChild(r);
     document.getElementById("textelement_overview").value= text;
-    document.getElementById("overviewCancel").className= "cancel";
+    document.getElementById("overviewCancel").className= "stop";
       document.getElementById("overviewSubmit").className= "save";
     document.getElementById("overviewCancel").addEventListener("click",closeEditOverview);
 }
@@ -1037,7 +1037,7 @@ function editEducation(event)
     r.appendChild(x);
     place.appendChild(r);
     document.getElementById("textelement_education").value= text;
-     document.getElementById("cancelEducation").className= "cancel";
+     document.getElementById("cancelEducation").className= "stop";
       document.getElementById("saveEducation").className= "save";
     document.getElementById("cancelEducation").addEventListener("click",closeEditEducation);
     
@@ -1090,7 +1090,7 @@ function editGallery(event)
     r.appendChild(x);
     place.appendChild(r);
     
-    document.getElementById("cancelGallery").className= "cancel";
+    document.getElementById("cancelGallery").className= "stop";
       document.getElementById("saveGallery").className= "save";
     
     document.getElementById("cancelGallery").addEventListener("click",closeEditGallery);
@@ -1160,7 +1160,7 @@ function editProfilePic(event)
     r.appendChild(x);
     inner.appendChild(r);
     
-    document.getElementById("cancelProfilePic").className= "cancel";
+    document.getElementById("cancelProfilePic").className= "stop";
       document.getElementById("saveProfilePic").className= "save";
     
     document.getElementById("cancelProfilePic").addEventListener("click",closeEditProfilePic);  
@@ -1189,9 +1189,6 @@ function closeEventPopup(event)
 {
      var modal = document.getElementById("popup");
      modal.style.display = "none";
-    var modal = document.getElementById("eventGalleryBar");
-    modal.style.display = "none";
-    var modal = document.getElementById("eventGallery");
-    modal.style.display = "none";
+    
     
 }
