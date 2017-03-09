@@ -344,6 +344,8 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 }
 .gallery
 {
+    position: relative;
+    background-color: #fff;
     
 }
 /*****Manager View Page ********
@@ -713,7 +715,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
   cursor: pointer;
   line-height: 24px;
 }
-.cancel
+.stop
 {
   height: 30px;
   float: right;
@@ -855,7 +857,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
 -moz-box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);
 box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
-     overflow: auto;
+    overflow: auto;
     
 }
 
@@ -885,7 +887,7 @@ box-shadow: -1px 5px 31px 0px rgba(97,90,97,1);*/
      padding: 10px 40px 10px 40px;
     text-decoration: none;
     background: #D2D8D8;
-    overflow:scroll;
+    overflow:auto;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: block;
